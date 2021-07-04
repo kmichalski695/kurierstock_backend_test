@@ -22,7 +22,13 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'http://localhost:3000',
+    '127.0.0.1',
+    'http://127.0.0.1',
+    'kurierstockbackendtest.herokuapp.com',
+    'www.kurierstockbackendtest.herokuapp.com'
+]
 
 
 # Application definition

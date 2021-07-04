@@ -22,7 +22,10 @@ POŁĄCZENIE Z HEROKU
     pip install dj-database-url                         #BIBLIOTEKA DO BAZY DANYCH
     pip install dj-static                               #BIBLIOTEKA ODPOWIADAJĄCA ZA PLIKI STATYCZNE TAKIE JAK ZDJECIA, MEDIA ITP
     pip freeze > requirements-dev.txt
-
+    heroku git:remote -a kurierstockbackendtest
+    git add .
+    git commit -am "make it better"
+    git push heroku main
 
 
 
