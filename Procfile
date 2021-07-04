@@ -1,0 +1,1 @@
+web: gunicorn kurierstok_backend.wsgi --log-file -

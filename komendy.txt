@@ -1,0 +1,32 @@
+
+STWORZENIE APLIKACJI
+    mkdir kurierstok_backend                            #STWORZENIE KATALOGU PROJEKTU
+    cd kurierstok_backend/                              #WEJŚCIE DO KATALOGU PROJEKTU
+    python3 - m venv venv                               #STWORZENIE "virtual environments”
+    source venv/bin/activate                            #URUCHOMIENIE "virtual environments”
+    pip install django                                  #INSTALACJA DJANGO
+    django-admin startproject kurierstok_backend .      #STWORZENIE PROJEKTU O NAZWIE "kurierstok_backend", KROPKA OZNACZA ZE TWORZY W AKTUALNYM KATALOGU
+    python3 manage.py runserver                         #TESTOWE URUCHOMIENIE PROJEKTU
+    django-admin startapp kurier_rest                   #STWORZENIE APLIKACJI W PROJEKCIE O NAZWIE "kurier_rest"
+
+GITHUB
+    echo "# kurierstock_backend_test" >> README.md
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin https://github.com/kmichalski695/kurierstock_backend_test.git
+    git push -u origin main
+
+POŁĄCZENIE Z HEROKU
+    pip install python-decouple                         #BIBLIOTEKA UMOŻLIWIAJĄCA UKRYCIE WRAŻLIWYCH DANYCH
+    pip install dj-database-url                         #BIBLIOTEKA DO BAZY DANYCH
+    pip install dj-static                               #BIBLIOTEKA ODPOWIADAJĄCA ZA PLIKI STATYCZNE TAKIE JAK ZDJECIA, MEDIA ITP
+    pip freeze > requirements-dev.txt
+
+
+
+
+
+
+
+

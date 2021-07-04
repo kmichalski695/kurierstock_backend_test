@@ -1,0 +1,4 @@
+*.idea
+*.sqllite3
+*pyc
+pic_folder
