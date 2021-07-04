@@ -28,6 +28,9 @@ POŁĄCZENIE Z HEROKU
     git push heroku main
 
     python manage.py collectstatic
+    heroku run python manage.py migrate
+    heroku run python manage.py collectstatic
+
 
 
 
