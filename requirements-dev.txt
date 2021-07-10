@@ -32,7 +32,6 @@ filelock==3.0.12
 filer3==0.1.2
 filters==1.3.2
 filters-django==1.0.5
-gunicorn==20.1.0
 heroku==0.1.4
 idna==2.10
 jmespath==0.10.0
