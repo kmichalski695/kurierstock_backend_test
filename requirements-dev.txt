@@ -35,7 +35,6 @@ filters-django==1.0.5
 heroku==0.1.4
 idna==2.10
 jmespath==0.10.0
-Mako==1.1.4.dev0
 Markdown @ file:///buildstream/freedesktop-sdk/components/python3-markdown.bst
 MarkupPy==1.14
 meson @ file:///buildstream/freedesktop-sdk/components/meson.bst
