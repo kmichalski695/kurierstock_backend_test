@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from rest_framework import viewsets, permissions
+from .serializers import RowerSerializer
+from .models import Rower
 
-# Create your views here.
+
+class RowerViewSet(viewsets.ModelViewSet):
+    serializer_class = RowerSerializer
+    queryset = Rower.objects.all()
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]

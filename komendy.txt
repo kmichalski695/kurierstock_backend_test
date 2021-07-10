@@ -30,6 +30,12 @@ POŁĄCZENIE Z HEROKU
     python manage.py collectstatic
     heroku run python manage.py migrate
     heroku run python manage.py collectstatic
+    heroku run python manage.py createsuperuser
+
+DJANGO REST
+    pip install djangorestframework
+    pip install django-cors-headers
+
 
 
 
