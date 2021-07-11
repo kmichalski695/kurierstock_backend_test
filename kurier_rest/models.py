@@ -41,7 +41,7 @@ class Rower(models.Model):
 
     @property
     def qr_code(self):
-        if self.id is None:
+        if self.ID is None:
             return format_html('<div>brak</div>')
         else:
             factory = qrcode.image.svg.SvgImage
