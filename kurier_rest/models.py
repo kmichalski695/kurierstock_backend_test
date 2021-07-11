@@ -10,7 +10,6 @@ import qrcode.image.svg
 from io import BytesIO
 
 
-
 class Kurier(models.Model):
     ZIELONY = 1
     NIEBIESKI = 2
@@ -48,7 +47,7 @@ class Rower(models.Model):
             img = qrcode.make(self.ID, image_factory=factory, box_size=20)
             stream = BytesIO()
             img.save(stream)
-            xml = stream.getvalue().decode().replace('<?xml version=\'1.0\' encoding=\'UTF-8\'?>','')
+            xml = stream.getvalue().decode().replace('<?xml version=\'1.0\' encoding=\'UTF-8\'?>', '')
             return format_html("<div style=\"background-color:white;\">{}</div>", mark_safe(xml))
 
     class Meta:
@@ -56,4 +55,15 @@ class Rower(models.Model):
         verbose_name_plural = u'Rowery'
 
 
+class UzycieRoweru(models.Model):
+    rower = models.OneToOneField(Rower, blank=True, null=False, primary_key=True, on_delete=models.CASCADE,
+                                 verbose_name=u'Historia użytkowania rowerów')
+    data_od = models.DateTimeField(default=timezone.now, verbose_name=u'Data od')
+    data_do = models.DateTimeField(default=timezone.now, verbose_name=u'Data do')
 
+
+class Zmiana(models.Model):
+    uzycie_roweru = models.ForeignKey(UzycieRoweru, verbose_name=u'Historia użytkowania rowerów', related_name='rowery', blank=True, null=True, on_delete=models.CASCADE)
+    kurier = models.OneToOneField(Kurier, blank=False, null=False, primary_key=True, on_delete=models.CASCADE, verbose_name=u'Kurier')
+    data_od = models.DateTimeField(default=timezone.now, verbose_name=u'Data od')
+    data_do = models.DateTimeField(default=timezone.now, verbose_name=u'Data do')
