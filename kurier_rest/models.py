@@ -30,7 +30,7 @@ class Kurier(models.Model):
         verbose_name_plural = u'Kurierzy'
 
     def __str__(self):
-        return self.uzytkownik.username
+        return self.imie + " " + self.nazwisko
 
 
 class Rower(models.Model):
@@ -54,16 +54,29 @@ class Rower(models.Model):
         verbose_name = u'Rower'
         verbose_name_plural = u'Rowery'
 
+    def __str__(self):
+        return self.nazwa
+
+
+class Zmiana(models.Model):
+    kurier = models.OneToOneField(Kurier, blank=False, null=False, primary_key=True, on_delete=models.CASCADE,
+                                  verbose_name=u'Kurier')
+    data_od = models.DateTimeField(default=timezone.now, verbose_name=u'Data od')
+    data_do = models.DateTimeField(default=timezone.now, verbose_name=u'Data do')
+
+    class Meta:
+        verbose_name = u'Zmiana'
+        verbose_name_plural = u'Zmiany'
+
 
 class UzycieRoweru(models.Model):
+    zmiana = models.ForeignKey(Zmiana, verbose_name=u'Rower', related_name='rowery',
+                               blank=True, null=True, on_delete=models.CASCADE)
     rower = models.OneToOneField(Rower, blank=True, null=False, primary_key=True, on_delete=models.CASCADE,
                                  verbose_name=u'Historia użytkowania rowerów')
     data_od = models.DateTimeField(default=timezone.now, verbose_name=u'Data od')
     data_do = models.DateTimeField(default=timezone.now, verbose_name=u'Data do')
 
-
-class Zmiana(models.Model):
-    uzycie_roweru = models.ForeignKey(UzycieRoweru, verbose_name=u'Historia użytkowania rowerów', related_name='rowery', blank=True, null=True, on_delete=models.CASCADE)
-    kurier = models.OneToOneField(Kurier, blank=False, null=False, primary_key=True, on_delete=models.CASCADE, verbose_name=u'Kurier')
-    data_od = models.DateTimeField(default=timezone.now, verbose_name=u'Data od')
-    data_do = models.DateTimeField(default=timezone.now, verbose_name=u'Data do')
+    class Meta:
+        verbose_name = u'Użycie roweru'
+        verbose_name_plural = u'Historia użycia rowerów'
