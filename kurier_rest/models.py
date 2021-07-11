@@ -35,7 +35,7 @@ class Kurier(models.Model):
 
 
 class Rower(models.Model):
-    id = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
+    ID = models.UUIDField(primary_key=True, default=uuid.uuid4(), editable=False)
     nazwa = models.CharField(max_length=400, verbose_name=u'Nazwa', blank=False, null=False)
     data_dodania = models.DateTimeField(default=timezone.now, verbose_name=u'Data dodania')
 
