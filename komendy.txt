@@ -40,6 +40,9 @@ UŻYWANIE KONSOLI
     python manage.py shell
     from kurier_rest.models import Rower
 
+CZYSZCZENIE BAZY DANYCH
+    python manage.py flush
+
 
 
 
