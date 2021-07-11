@@ -45,7 +45,7 @@ class Rower(models.Model):
             return format_html('<div>brak</div>')
         else:
             factory = qrcode.image.svg.SvgImage
-            img = qrcode.make(self.id, image_factory=factory, box_size=20)
+            img = qrcode.make(self.ID, image_factory=factory, box_size=20)
             stream = BytesIO()
             img.save(stream)
             xml = stream.getvalue().decode().replace('<?xml version=\'1.0\' encoding=\'UTF-8\'?>','')
