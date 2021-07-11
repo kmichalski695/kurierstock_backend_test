@@ -36,6 +36,10 @@ DJANGO REST
     pip install djangorestframework
     pip install django-cors-headers
 
+UŻYWANIE KONSOLI
+    python manage.py shell
+    from kurier_rest.models import Rower
+
 
 
 

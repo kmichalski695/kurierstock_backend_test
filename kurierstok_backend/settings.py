@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'phone_field',                  #pole do obsługi numeru telefonu
     'kurier_rest',                  #aplikacja w projekcie
     'rest_framework',               #do obsługi rest api
-    'corsheaders'                   #nagłowki do obsługi rest api
+    'corsheaders',                  #nagłowki do obsługi rest api
+    'qrcode'
 ]
 
 MIDDLEWARE = [

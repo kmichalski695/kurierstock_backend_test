@@ -7,13 +7,13 @@ import uuid
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('kurier_rest', '0002_rower'),
+        ('kurier_rest', '0003_alter_rower_id'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='rower',
             name='id',
-            field=models.UUIDField(default=uuid.UUID('c3fff4d3-d95b-49ec-a69f-337491bf92ad'), editable=False, primary_key=True, serialize=False),
+            field=models.UUIDField(default=uuid.UUID('4702414a-d8ce-4532-b9ab-29c98779f6fa'), editable=False, primary_key=True, serialize=False),
         ),
     ]
