@@ -59,8 +59,7 @@ class Rower(models.Model):
 
 
 class Zmiana(models.Model):
-    kurier = models.OneToOneField(Kurier, blank=False, null=False, primary_key=True, on_delete=models.CASCADE,
-                                  verbose_name=u'Kurier')
+    kurier = models.OneToOneField(Kurier, blank=False, null=False, primary_key=True, on_delete=models.CASCADE, verbose_name=u'Kurier')
     data_od = models.DateTimeField(default=timezone.now, verbose_name=u'Data od')
     data_do = models.DateTimeField(default=timezone.now, verbose_name=u'Data do')
 
